@@ -8,7 +8,7 @@ http.createServer(function(req, res) {
   switch (urlParsed.pathname) {
 
 case '/':
-     res.setHeader('Content-Type', 'text/html'); sendFile("inkomp.html", res);
+     res.setHeader('Content-Type', 'text/html'); sendFile("views/index.html", res);
  break;
 default:
       res.statusCode = 404;
