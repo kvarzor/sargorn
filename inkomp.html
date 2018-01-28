@@ -8,8 +8,8 @@
 font-weight: bold;
     background-color: rgb(0, 0, 0);
     color: #7e7e86;
-width: 100%;
-         height: 80%;font-size:30px;
+width: 49%;
+         height: 31px;font-size:30px;
          
    }
 .colortext7 {
@@ -17,7 +17,7 @@ width: 100%;
 font-weight: bold;
     background-color: rgb(0, 0, 0);
     color: #7e7e86; 
-width: 100%;height: 20%;
+width: 50%;height:31px;
          font-size:30px;
         
    }
@@ -31,85 +31,26 @@ width: 100%;height: 20%;
         }
     </style>
 </head>
-<body bgcolor='black'>
+<body bgcolor='black'><br>
+<input type='button' value='psp' onclick="o('psp');">
+<input type='button' value='stppsp' onclick="o('stppsp');">
+<br><br>
 <textarea id="i" class="colortext" autofocus onkeydown="
-if(event.keyCode==118){v('console.log();',12);return false;};
-if(event.keyCode==13){сканер();
-ev(document.getElementById('i').value);return false;};" onkeyup="
-let str= document.getElementById('i').value,k=kursor(),
-p=str.substring(k-2,k);
-if(p=='cc'){v('c+=;',3);};
-if(p=='ll'){v('/*',2);};
-if(p=='pp'){v('*/',2);};
-if(p=='co'){v('console.log();',12);};
-if(p=='ss'){v('',0);ev('stp=0;');};
-if(p=='sp'){v('',0);ev('stp=1;sp(1);');};
-   "></textarea>
-<textarea id="i7" class="colortext7"></textarea>
-<div id="i8" class="colortext8"></div>
+if(event.keyCode==112){z();return false;};"></textarea><textarea id="i7" class="colortext7"></textarea>
+<br><br>
+<div id="i8"><img src="https://livechat.su/captcha.php?token=8fa355a24e54f1d&rand=1" 
+width='700px' height='300px'></div>
     <script>
- function v(p,kol){var kur=kursor();
-var str= document.getElementById('i').value; 
-str=str.substring(0,kursor()-2)+p+str.substring(kursor());
-document.getElementById('i').value=str;
-setCaretToPos(document.getElementById('i'),kur+kol-2);};
- 
+function o(k){document.getElementById('i7').value='';
 var xhr = new XMLHttpRequest();
-
-    xhr.open("POST", "/p", true);
+ xhr.open("POST", "/"+k, true);
 xhr.onreadystatechange = function() {
       if (xhr.readyState == 4)   { if (xhr.status == 200) {
- document.getElementById('i').value=xhr.responseText; 
+ document.getElementById('i7').value=xhr.responseText; 
 
-}; }; };          xhr.send();
-function setSelectionRange(input, selectionStart, selectionEnd) {
-  if (input.setSelectionRange) {
-    input.focus();
-    input.setSelectionRange(selectionStart, selectionEnd);
-  }
-  else if (input.createTextRange) {
-    var range = input.createTextRange();
-    range.collapse(true);
-    range.moveEnd('character', selectionEnd);
-    range.moveStart('character', selectionStart);
-    range.select();
-  }
-}
- 
-function setCaretToPos (input, pos) {
-  setSelectionRange(input, pos, pos);
-};
-function kursor( ctrl ) {
-ctrl=document.getElementById('i');
-        var CaretPos = 0;
-
-        if ( document.selection ) {
-
-            ctrl.focus ();
-        var Sel = document.selection.createRange();
-
-            Sel.moveStart ('character', -ctrl.value.length);
-
-            CaretPos = Sel.text.length;
-
-        } else if ( ctrl.selectionStart || ctrl.selectionStart == '0' ) {
-
-            CaretPos = ctrl.selectionStart;
-
-        }
-
-       return CaretPos;
-
-    };   function сканер(){var n=document.getElementById('i').value;
-var xhr2 = new XMLHttpRequest();xhr2.open("POST", "/z", true);
-xhr2.send(n);};
-function ev(j){ document.getElementById('i7').value='';
-var xhr2 = new XMLHttpRequest();xhr2.open("POST", "/e8", true);
-xhr2.onreadystatechange = function() {
-      if (xhr2.readyState == 4)   { if (xhr2.status == 200) {
-c(xhr2.responseText);};};};
-xhr2.send('let c="Ура! ",o=function(){res.statusCode=200;res.end(JSON.stringify(c));};'+j+'o();');};
-function c(j){ document.getElementById('i7').value+=j+' ';};
-    </script>
+}; }; };          xhr.send();};
+function z(){document.getElementById('i8').innerHTML=`<img src="https://livechat.su/captcha.php?token=8fa355a24e54f1d&rand=`+Math.random()+ 
+`" width='700px' height='300px'>`;};
+ </script>
 </body>
 </html>
