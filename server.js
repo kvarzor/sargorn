@@ -1,7 +1,7 @@
 ﻿var fs = require('fs');var http = require('http');
 var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
     ip   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
-var url = require('url');
+var url = require('url'); fs.writeFileSync('kod3.txt', 'body');
 http.createServer(function(req, res) {
   var urlParsed = url.parse(req.url);
 
